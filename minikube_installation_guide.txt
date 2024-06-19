@@ -1,0 +1,46 @@
+docker_install
+ubuntu@ip-172-31-61-191:~$ cat docker_install.sh
+!#/bin/bash
+
+sudo apt update -y
+sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt update -y
+apt-cache policy docker-ce
+sudo apt install docker-ce -y
+sudo usermod -aG docker $USER && newgrp docker
+sudo systemctl status docker
+
+kubectl_install
+ubuntu@ip-172-31-61-191:~$ cat kubectl_install.sh
+!#/bin/bash
+
+# ref- https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+chmod +x kubectl
+mkdir -p ~/.local/bin
+mv ./kubectl ~/.local/bin/kubectl
+
+kubectl version --client
+
+ubuntu@ip-172-31-61-191:~$ cat minikube_install.sh
+!#/bin/bash
+
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+minikube start
+minikube status
+minikube ip
+
+NOTE:
+We are using Minikube so we need to run below command before creating image.
+$ eval $(minikube docker-env)
+
+This will use the minikube docker-env for the current session.
+Ref: https://stackoverflow.com/questions/56392041/getting-errimageneverpull-in-pods
