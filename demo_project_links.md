@@ -20,4 +20,8 @@
 **4.** **CICD Pipeline to deploy Kubernetes Applications using Terraform, EKS, and Jenkins**
 
    **Medium blog:** https://medium.com/@selvamraju007/use-case-cicd-pipeline-to-deploy-kubernetes-applications-using-terraform-eks-and-jenkins-d35e74dba01d
+
+**5. The Ultimate CICD Corporate DevOps Pipeline Project | Real-Time DevOps Project**
+
+   **Youtube:** https://www.youtube.com/watch?v=dHWUgsHPjaE
  
