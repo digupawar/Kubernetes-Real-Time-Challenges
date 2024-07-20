@@ -24,4 +24,8 @@
 **5. The Ultimate CICD Corporate DevOps Pipeline Project | Real-Time DevOps Project**
 
    **Youtube:** https://www.youtube.com/watch?v=dHWUgsHPjaE
+
+**6. Microservice-Project**
+
+   **Github:** https://github.com/naveensilver/Microservice-Project?tab=readme-ov-file
  
