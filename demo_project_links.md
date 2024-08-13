@@ -28,4 +28,18 @@
 **6. Microservice-Project**
 
    **Github:** https://github.com/naveensilver/Microservice-Project?tab=readme-ov-file
+
+**7. Advanced End-to-End DevSecOps Kubernetes Three-Tier Project using AWS EKS, ArgoCD, Prometheus, Grafana, and Jenkins**
+
+**Blog:** https://medium.com/stackademic/advanced-end-to-end-devsecops-kubernetes-three-tier-project-using-aws-eks-argocd-prometheus-fbbfdb956d1a
+
+**Github links:** 
+
+**Project:** https://github.com/AmanPathak-DevOps/End-to-End-Kubernetes-Three-Tier-DevSecOps-Project/tree/master
+
+**Create EKS using TF:** https://github.com/AmanPathak-DevOps/EKS-Terraform-GitHub-Actions
+
+**Youtube:** https://www.youtube.com/watch?v=-AAcMNncCa4
+
+
  
